@@ -8,10 +8,10 @@
 $name = "PHP Store";
 $credit = 1000;
 
-$products['Computer']=750;
-$products['Car']=15000;
-$products['iPhone']=1000;
-$products['Toaster']=75;
+$products['Computer'] = 750;
+$products['Car'] = 15000;
+$products['iPhone'] = 1000;
+$products['Toaster'] = 75;
 
 echo "<h1>Welcome to ".$name."!</h1>";
 echo "<h2>You have $".$credit." in your wallet.</h2>";
@@ -26,6 +26,19 @@ foreach($products as $key => $value) {
         echo "<p>".$key."</p>";
     }
 }
+
+$amount = 800;
+$taxRate = 0.0825;
+$addedTax = $amount * $taxRate;
+echo $addedTax;
+
+function tax_calc($amount, $tax) {
+    $calculate_tax = $amount * $tax;
+    $amount = round($amount + $calculate_tax, 2);
+    return $amount;
+}
+
+echo "<p>".tax_calc(750, 0.223)."</p>";
     ?>
   </body>
 </html>
